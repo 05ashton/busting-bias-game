@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busting Bias Game</title>
+
+    <!-- ✅ Link to your CSS (same folder as index.html) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Makes the game mobile-friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- 🎯 Game Title -->
+    <h1>Busting Bias</h1>
+
+    <!-- 🏆 Score display (JavaScript updates this) -->
+    <div id="score">Score: 0</div>
+
+    <!-- 📝 The word to categorize appears here -->
+    <div id="stimulus">Loading...</div>
+
+    <!-- ✅ Feedback area (✔ or ✘) -->
+    <div id="feedback"></div>
+
+    <!-- 🎮 Category Buttons with Labels -->
+    <div class="button-container">
+        <div class="category">
+            <p>Category: LEFT</p>
+            <button id="left-button">⬅ Left</button>
+        </div>
+        <div class="category">
+            <p>Category: RIGHT</p>
+            <button id="right-button">Right ➡</button>
+        </div>
+    </div>
+
+    <!-- 🔄 Restart Button (hidden until game ends) -->
+    <button id="restart" style="display:none;">🔄 Play Again</button>
+
+    <!-- 🎉 Game Over message (hidden until the game finishes) -->
+    <div id="game-over" style="display:none;"></div>
+
+    <!-- 🔊 Sound Effects (use your .wav files) -->
+    <audio id="correct-sound" src="correct.wav" preload="auto"></audio>
+    <audio id="incorrect-sound" src="incorrect.wav" preload="auto"></audio>
+
+    <!-- ✅ Link to your game logic (same folder as index.html) -->
+    <script src="game.js"></script>
+
+</body>
+</html>
