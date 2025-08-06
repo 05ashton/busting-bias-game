@@ -1,0 +1,125 @@
+/*
+Busting Bias - CSS Styles
+Dark Mode + Animations + Game Over Styling
+Author: Ashton Curl
+Year: 2025
+*/
+
+/* --- Page Styling --- */
+body {
+  background-color: #121212;   /* Dark background */
+  color: #ffffff;              /* White text for contrast */
+  font-family: Arial, sans-serif;
+  text-align: center;          /* Center everything */
+  padding: 20px;
+}
+
+/* --- Game Title --- */
+h1 {
+  font-size: 2.5rem;           /* Big title */
+  margin-bottom: 10px;
+}
+
+/* --- The Word to Categorize --- */
+#stimulus {
+  font-size: 3rem;             /* Big bold word */
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* --- Feedback (✔ or ✘) --- */
+#feedback {
+  font-size: 3rem;             /* Large icons */
+  margin: 10px 0 30px;
+  display: none;               /* Hidden until needed */
+}
+
+/* Feedback Colors */
+.correct { color: #4caf50; }     /* Green for correct */
+.incorrect { color: #f44336; }   /* Red for incorrect */
+
+/* --- Score Display --- */
+#score {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* --- Buttons --- */
+button {
+  background-color: #1e1e1e;   /* Dark button background */
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  margin: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+button:hover {
+  background-color: #333;      /* Slightly lighter on hover */
+  transform: scale(1.05);      /* Grow effect */
+}
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;         /* Gray out when disabled */
+}
+
+/* --- Restart Button Styling --- */
+#restart {
+  background-color: #2196f3;   /* Bright blue */
+  border: none;
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+#restart:hover { background-color: #1976d2; }
+
+/* --- Container for Left/Right Buttons --- */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;                   /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* --- Labels Above Buttons --- */
+.category p {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+/* --- Game Over Message --- */
+#game-over {
+  font-size: 2rem;
+  margin-top: 30px;
+  color: #ffeb3b;              /* Bright yellow */
+}
+
+/* --- Word Slide Animations --- */
+.slide-in-left { animation: slideInFromLeft 0.5s forwards; }
+.slide-in-right { animation: slideInFromRight 0.5s forwards; }
+
+/* Animation Keyframes for Word Entry */
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInFromRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* --- Shake Animation for Incorrect Answers --- */
+.shake { animation: shakeAnimation 0.4s; }
+@keyframes shakeAnimation {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}
+
+/* --- Mobile Friendly Layout --- */
+@media (max-width: 600px) {
+  #stimulus { font-size: 2rem; }
+  button { font-size: 1rem; padding: 10px 18px; }
+}
